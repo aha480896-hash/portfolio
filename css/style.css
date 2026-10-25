@@ -85,9 +85,11 @@ p { margin: 0; }
 
 /* Первый экран: коротко, чтобы работы были видны сразу */
 .hero { padding-block: clamp(20px, 3vw, 40px) clamp(28px, 3.5vw, 44px); }
-.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
-.hero h1 { max-width: 15ch; font-size: clamp(40px, 5vw, 72px); }
-.hero-side { display: grid; gap: 16px; }
+.hero .wrap { display: grid; gap: clamp(20px, 2.6vw, 34px); }
+.hero h1 { max-width: 22ch; font-size: clamp(40px, 5.4vw, 80px); }
+.hero-side { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px clamp(24px, 4vw, 56px); align-items: center; }
+.hero-side .hello { grid-row: span 2; }
+@media (max-width: 900px) { .hero-side { grid-template-columns: 1fr; } .hero-side .hello { grid-row: auto; } }
 .hero-side p { color: var(--muted); font-size: 18px; }
 .hero-side .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .free { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; }
