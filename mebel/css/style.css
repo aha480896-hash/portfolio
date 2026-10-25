@@ -1,0 +1,193 @@
+/* «Ладно» — мебельная мастерская, кухни и шкафы на заказ. Демо-сайт для портфолио.
+   Палитра «штукатурка и дуб»: светлая серая штукатурка, тёмный сине-графитовый текст,
+   тёплый дуб как акцент. Шрифт Jost: светлые крупные заголовки, обычный вес для текста.
+   Сетка по левому краю, ширина до 1240px. */
+
+@font-face { font-family: "Jost"; font-weight: 300 600; font-display: swap;
+  src: url("../fonts/jost-cyr.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Jost"; font-weight: 300 600; font-display: swap;
+  src: url("../fonts/jost-lat.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --plaster: #ecebe7;
+  --white: #fafaf8;
+  --ink: #1c2430;
+  --muted: #5e6672;
+  --oak: #b8875a;
+  --oak-deep: #8f6640;
+  --oak-soft: #ead9c5;
+  --line: rgba(28, 36, 48, .14);
+  --font: "Jost", "Segoe UI", system-ui, sans-serif;
+  --gutter: clamp(16px, 4vw, 44px);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--plaster); color: var(--ink); font: 400 18px/1.6 var(--font); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-weight: 300; line-height: 1.04; margin: 0; letter-spacing: -.02em; text-wrap: balance; }
+h1 { font-size: clamp(46px, 7vw, 104px); }
+h2 { font-size: clamp(36px, 4.8vw, 66px); }
+h3 { font-size: 22px; font-weight: 500; line-height: 1.25; letter-spacing: -.005em; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--oak); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--white); padding: 10px 14px; z-index: 100; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 2px; font: 500 16.5px/1 var(--font); text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: background-color .2s, color .2s; }
+.btn-ink { background: var(--ink); color: var(--white); }
+.btn-ink:hover { background: #2c3747; }
+.btn-line { background: transparent; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--white); }
+.btn-small { min-height: 44px; padding: 0 18px; font-size: 15px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Шапка */
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(236, 235, 231, .94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; gap: 28px; min-height: 70px; }
+.logo { font: 500 26px/1 var(--font); letter-spacing: .14em; text-decoration: none; text-transform: lowercase; }
+.logo span { color: var(--oak); }
+.nav { display: flex; gap: 28px; margin-left: auto; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 16px; }
+.nav a:hover { color: var(--ink); }
+.header-phone { text-decoration: none; font-weight: 500; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.menu-toggle { display: none; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 4px; background: var(--white); cursor: pointer; }
+.menu-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); margin: 4px auto; }
+@media (max-width: 960px) {
+  .nav, .header-phone, .site-header .btn { display: none; }
+  .menu-toggle { display: block; }
+  .site-header.open .nav { display: flex; flex-direction: column; gap: 0; position: absolute; top: 70px; left: 0; right: 0; background: var(--plaster); border-bottom: 1px solid var(--line); padding: 8px max(var(--gutter), env(safe-area-inset-left, 0px)) 20px; }
+  .site-header.open .nav a { padding: 14px 0; font-size: 19px; color: var(--ink); border-bottom: 1px solid var(--line); }
+}
+
+/* Первый экран: текст слева, фото справа до края */
+.hero { padding-block: clamp(32px, 5vw, 64px) clamp(56px, 8vw, 96px); }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: end; }
+.hero-text { display: grid; gap: 28px; min-width: 0; padding-bottom: 8px; }
+.hero-text .lead { font-size: 20px; color: var(--muted); max-width: 42ch; }
+.hero-photo { min-width: 0; }
+.hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% center; }
+.hero-photo figcaption { font-size: 14.5px; color: var(--muted); margin-top: 10px; }
+.promise { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 8px 40px; border-top: 1px solid var(--line); padding-top: 22px; }
+.promise b { display: block; font-size: 30px; font-weight: 300; line-height: 1.1; }
+.promise span { color: var(--muted); font-size: 15px; }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: 1fr; } .hero-photo img { aspect-ratio: 4 / 3; } }
+@media (max-width: 520px) { .promise { grid-template-columns: repeat(2, auto); } }
+
+.section { padding-block: clamp(72px, 10vw, 128px); }
+.section-head { display: grid; gap: 16px; margin-bottom: clamp(32px, 5vw, 56px); max-width: 800px; }
+.section-head p { color: var(--muted); font-size: 19px; max-width: 56ch; }
+.paper { background: var(--white); }
+
+/* Конструктор кухни */
+.builder { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.plan { background: var(--plaster); border: 1px solid var(--line); padding: clamp(14px, 2vw, 24px); min-width: 0; }
+.plan svg { width: 100%; height: auto; display: block; }
+.plan .wall { fill: none; stroke: var(--ink); stroke-width: 6; }
+.plan .module { fill: var(--oak-soft); stroke: var(--ink); stroke-width: 1.2; transition: fill .2s; }
+.plan .module.upper { fill: none; stroke: var(--oak-deep); stroke-dasharray: 4 3; }
+.plan .island { fill: var(--oak); stroke: var(--ink); stroke-width: 1.2; }
+.plan .sink { fill: var(--white); stroke: var(--ink); stroke-width: 1.2; }
+.plan .hob { fill: var(--ink); }
+.plan .dim { fill: var(--muted); font: 500 14px var(--font); }
+.plan .dimline { stroke: var(--muted); stroke-width: 1; }
+.plan-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--muted); margin-top: 12px; }
+.plan-legend i { display: inline-block; width: 14px; height: 10px; border: 1px solid var(--ink); vertical-align: -1px; margin-right: 6px; background: var(--oak-soft); }
+.plan-legend i.u { background: none; border: 1px dashed var(--oak-deep); }
+.plan-legend i.s { background: var(--oak); }
+
+.controls { display: grid; gap: 22px; min-width: 0; }
+.controls fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+.controls legend { font-weight: 500; margin-bottom: 8px; }
+.options { display: flex; flex-wrap: wrap; gap: 8px; }
+.options label { position: relative; }
+.options input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.options span { display: inline-block; padding: 10px 16px; border: 1px solid var(--line); background: var(--white); cursor: pointer; font-size: 15.5px; line-height: 1.3; }
+.options span small { display: block; color: var(--muted); font-size: 13px; }
+.options input:checked + span { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.options input:focus-visible + span { outline: 3px solid var(--oak); outline-offset: 2px; }
+.range-row { display: flex; align-items: center; gap: 16px; }
+.range-row input { flex: 1; accent-color: var(--ink); min-width: 0; }
+.range-row output { font-variant-numeric: tabular-nums; font-weight: 500; min-width: 62px; text-align: right; }
+.check { display: flex; gap: 10px; align-items: center; font-size: 16px; cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--ink); }
+.estimate { background: var(--ink); color: var(--white); padding: 24px 26px; display: grid; gap: 10px; }
+.estimate .label { color: #aeb6c2; font-size: 15px; }
+.estimate .sum { font-size: clamp(30px, 3.4vw, 40px); font-weight: 300; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.estimate .detail { color: #aeb6c2; font-size: 14.5px; }
+.estimate .btn { background: var(--oak); border-color: var(--oak); color: var(--ink); margin-top: 6px; text-align: center; line-height: 1.25; padding-block: 12px; }
+.estimate .btn:hover { background: #c99a6d; }
+@media (max-width: 920px) { .builder { grid-template-columns: 1fr; } }
+
+/* Работы */
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filter button { font: 500 15.5px var(--font); padding: 10px 18px; border: 1px solid var(--line); background: transparent; cursor: pointer; color: var(--ink); }
+.filter button[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.gallery figure { margin: 0; display: grid; gap: 8px; }
+.gallery figure.wide { grid-column: span 2; }
+.gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.gallery figure.wide img { aspect-ratio: 8 / 5; }
+.gallery figcaption { font-size: 15px; color: var(--muted); }
+.gallery figcaption b { color: var(--ink); font-weight: 500; }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .gallery figure.wide { grid-column: span 2; } }
+
+/* Как работаем — настоящая последовательность */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: s; border-top: 1px solid var(--ink); }
+.steps li { counter-increment: s; padding: 24px 22px 8px 0; display: grid; gap: 10px; align-content: start; }
+.steps li + li { padding-left: 22px; border-left: 1px solid var(--line); }
+.steps li::before { content: counter(s); font-size: 46px; font-weight: 300; line-height: 1; color: var(--oak); }
+.steps .when { font-size: 14.5px; color: var(--muted); }
+.steps p { color: var(--muted); font-size: 16px; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps li:nth-child(3) { padding-left: 0; border-left: 0; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } .steps li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); } }
+
+/* Материалы */
+.materials { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.materials img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.swatch { display: grid; gap: 6px; font-size: 14.5px; }
+.swatch i { display: block; aspect-ratio: 1; border: 1px solid var(--line); }
+.swatch span { color: var(--muted); }
+@media (max-width: 860px) { .materials { grid-template-columns: 1fr; } }
+
+/* Отзывы */
+.reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.review { margin: 0; padding: 28px 28px 8px 0; display: grid; gap: 14px; align-content: start; }
+.review + .review { padding-left: 28px; border-left: 1px solid var(--line); }
+.review blockquote { margin: 0; font-size: 19px; line-height: 1.5; }
+.review figcaption { color: var(--muted); font-size: 15px; }
+.demo-note { color: var(--muted); font-size: 14px; margin-top: 18px; }
+@media (max-width: 900px) { .reviews { grid-template-columns: 1fr; } .review + .review { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); } }
+
+/* Шоурум и контакты */
+.visit { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); }
+.visit dl { margin: 0; display: grid; gap: 20px; }
+.visit dt { color: var(--muted); font-size: 15px; }
+.visit dd { margin: 2px 0 0; font-size: 21px; }
+.visit-info { display: grid; gap: 28px; align-content: start; }
+.visit img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; }
+@media (max-width: 860px) { .visit { grid-template-columns: 1fr; } }
+
+.site-footer { border-top: 1px solid var(--line); padding-block: 36px; color: var(--muted); font-size: 14.5px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+
+/* Окно заявки на замер */
+dialog.booking { border: 0; padding: 0; width: min(520px, calc(100vw - 32px)); background: var(--white); color: var(--ink); box-shadow: 0 30px 80px rgba(0, 0, 0, .3); }
+dialog.booking::backdrop { background: rgba(28, 36, 48, .55); }
+.booking form { display: grid; gap: 16px; padding: clamp(22px, 4vw, 34px); }
+.booking .top { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.booking h2 { font-size: 38px; }
+.booking .close { width: 44px; height: 44px; flex: none; border: 1px solid var(--line); background: transparent; font-size: 22px; cursor: pointer; color: var(--ink); }
+.booking label { display: grid; gap: 6px; font-size: 15px; color: var(--muted); }
+.booking select, .booking input { font: 400 17px var(--font); color: var(--ink); min-height: 50px; padding: 0 14px; border: 1px solid var(--line); background: var(--plaster); width: 100%; border-radius: 0; }
+.booking .btn { width: 100%; }
+.booking .fine { font-size: 13.5px; color: var(--muted); }

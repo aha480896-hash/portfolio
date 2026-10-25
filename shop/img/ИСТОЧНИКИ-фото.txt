@@ -1,0 +1,5 @@
+Фото — Unsplash (unsplash.com/license): бесплатно, в том числе для коммерческого использования. Имя файла и id фото (images.unsplash.com/photo-<id>):
+hero 1770925758916-44e22e159542
+shop-1 1760862652442-e8ff7ebdd2f8
+shop-2 1790600110643-68208f182eff
+samples 1776651993626-7cc836bf03aa

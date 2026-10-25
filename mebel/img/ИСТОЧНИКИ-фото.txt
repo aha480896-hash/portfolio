@@ -1,0 +1,12 @@
+Фото — Unsplash (unsplash.com/license): бесплатно, в том числе для коммерческого использования. Имя файла и id фото (images.unsplash.com/photo-<id>):
+hero 1512916194211-3f2b7f5f7de3
+k-corner 1600489000022-c2086d79f9d4
+k-line 1502005097973-6a7082348e28
+k-island 1759147960461-b74a7e9a75d4
+k-u 1671197244266-73129c97c096
+k-light 1643949915134-73a4c880f7c7
+k-grey 1760072513457-651955c7074d
+w-mirror 1672137233327-37b0c1049e77
+w-closet 1778731660303-1fa5ede75477
+shop-pencil 1659930087003-2d64e33181f7
+shop-tools 1426927308491-6380b6a9936f

@@ -1,0 +1,11 @@
+Фото — Unsplash (unsplash.com/license): бесплатно, в том числе для коммерческого использования. Имя файла и id фото (images.unsplash.com/photo-<id>):
+p-face 1763503834047-ac85c4105c0b
+p-lips 1646110929780-b97f94dd7ccf
+p-oil 1631438420064-8f1b2b52b2e6
+p-hands 1779437141537-62577b216307
+p-mask 1626783416763-67a92e5e7266
+p-soap 1781080922537-7d5338f96e95
+story 1765691622563-a57c825c8223
+textures 1748543668676-ea8241cb3886
+review 1728727267814-792db55ce678
+meadow 1784323541057-fbf9aafc0047

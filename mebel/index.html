@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кухни и шкафы на заказ в Москве — мастерская «Ладно»</title>
+<meta name="description" content="Кухни, шкафы и гардеробные на заказ от мастерской «Ладно». Посчитайте цену кухни на сайте, бесплатный замер, своё производство, сборка за 30 дней.">
+<meta name="theme-color" content="#ecebe7">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/jost-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Мастерская «Ладно», в начало">ладно<span>.</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#raschet">Расчёт кухни</a>
+      <a href="#raboty">Работы</a>
+      <a href="#kak">Как работаем</a>
+      <a href="#shourum">Шоурум</a>
+    </nav>
+    <a class="header-phone" href="tel:+74950000000">+7 (495) 000-00-00</a>
+    <a class="btn btn-ink btn-small" href="#" data-book="кухня">Вызвать замерщика</a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Кухни и шкафы на заказ</h1>
+      <p class="lead">Делаем на своём производстве в Мытищах. Замер и 3D-проект бесплатно, от договора до сборки — 30 дней.</p>
+      <div class="actions">
+        <a class="btn btn-ink" href="#raschet">Посчитать кухню</a>
+        <a class="btn btn-line" href="#" data-book="кухня">Вызвать замерщика</a>
+      </div>
+      <div class="promise">
+        <div><b>30 дней</b><span>от договора до сборки</span></div>
+        <div><b>5 лет</b><span>гарантия на корпус и фурнитуру</span></div>
+        <div><b>1 400</b><span>кухонь с 2015 года</span></div>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="img/hero.jpg" width="1600" height="1068" alt="Кухня с деревянными фасадами и чёрным островом">
+      <figcaption>Кухня с островом, фасады шпон дуба, Химки</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section paper" id="raschet">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Посчитайте кухню за минуту</h2>
+      <p>Выберите форму, длину и материалы. Сверху появится план по модулям 60 см, снизу — примерная цена. Точную назовём после замера.</p>
+    </div>
+    <div class="builder">
+      <div>
+        <div class="plan" aria-label="План кухни, вид сверху">
+          <svg id="plan-svg" viewBox="0 0 640 220" role="img" aria-label="Схема кухни по выбранным параметрам"></svg>
+        </div>
+        <div class="plan-legend"><span><i></i>нижние шкафы</span><span><i class="u"></i>верхние шкафы</span><span><i class="s"></i>остров</span><span>мойка и плита — на длинной стене</span></div>
+      </div>
+      <form class="controls" id="builder">
+        <fieldset>
+          <legend>Форма кухни</legend>
+          <div class="options">
+            <label><input type="radio" name="layout" value="line"><span>Прямая</span></label>
+            <label><input type="radio" name="layout" value="corner" checked><span>Угловая</span></label>
+            <label><input type="radio" name="layout" value="u"><span>П-образная</span></label>
+            <label><input type="radio" name="layout" value="island"><span>С островом</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Длина по стенам</legend>
+          <div class="range-row">
+            <input type="range" id="b-length" name="length" min="2.4" max="7.2" step="0.3" value="3.6" aria-label="Длина кухни по стенам в метрах">
+            <output for="b-length">3,6 м</output>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Фасады</legend>
+          <div class="options">
+            <label><input type="radio" name="facade" value="ldsp"><span>ЛДСП<small>практично, 40 цветов</small></span></label>
+            <label><input type="radio" name="facade" value="mdf" checked><span>МДФ эмаль<small>матовая или глянец</small></span></label>
+            <label><input type="radio" name="facade" value="veneer"><span>Шпон дуба<small>настоящее дерево</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Столешница</legend>
+          <div class="options">
+            <label><input type="radio" name="top" value="ldsp" checked><span>ЛДСП</span></label>
+            <label><input type="radio" name="top" value="quartz"><span>Кварц</span></label>
+            <label><input type="radio" name="top" value="ceramic"><span>Керамика</span></label>
+          </div>
+        </fieldset>
+        <label class="check"><input type="checkbox" name="upper" checked> Верхний ряд шкафов</label>
+        <div class="estimate" aria-live="polite">
+          <span class="label">Примерная цена</span>
+          <span class="sum" id="sum">—</span>
+          <span class="detail" id="detail"></span>
+          <a class="btn" href="#" data-book="кухня" data-with-plan>Отправить расчёт и вызвать замерщика</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="raboty">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Работы</h2>
+      <p>Каждая кухня и шкаф сделаны под размеры конкретной квартиры.</p>
+    </div>
+    <div class="filter" role="group" aria-label="Показать работы">
+      <button type="button" data-type="all" aria-pressed="true">Все</button>
+      <button type="button" data-type="kitchen" aria-pressed="false">Кухни</button>
+      <button type="button" data-type="wardrobe" aria-pressed="false">Шкафы и гардеробные</button>
+    </div>
+    <div class="gallery">
+      <figure class="wide" data-type="kitchen"><img src="img/k-island.jpg" width="1200" height="724" alt="Кухня с островом и барными стульями" loading="lazy"><figcaption><b>С островом</b>, шпон и чёрный камень, 5,4 м</figcaption></figure>
+      <figure data-type="kitchen"><img src="img/k-corner.jpg" width="1200" height="1600" alt="Угловая кухня с тёмными фасадами" loading="lazy"><figcaption><b>Угловая</b>, МДФ эмаль, 4,2 м</figcaption></figure>
+      <figure data-type="wardrobe"><img src="img/w-closet.jpg" width="1000" height="1500" alt="Встроенная гардеробная со штангами и полками" loading="lazy"><figcaption><b>Гардеробная</b> в нише, 1,8 м</figcaption></figure>
+      <figure data-type="kitchen"><img src="img/k-line.jpg" width="1200" height="1800" alt="Длинная прямая кухня из дуба" loading="lazy"><figcaption><b>Прямая</b>, шпон дуба, 6 м</figcaption></figure>
+      <figure data-type="kitchen"><img src="img/k-light.jpg" width="1200" height="1500" alt="Светлая кухня без ручек" loading="lazy"><figcaption><b>Прямая</b>, без ручек, 3 м</figcaption></figure>
+      <figure class="wide" data-type="kitchen"><img src="img/k-u.jpg" width="1200" height="676" alt="Белая кухня с островом и подвесными светильниками" loading="lazy"><figcaption><b>П-образная</b>, кварц, 7,2 м</figcaption></figure>
+      <figure class="wide" data-type="wardrobe"><img src="img/w-mirror.jpg" width="1000" height="750" alt="Шкаф с подсветкой и туалетным столиком" loading="lazy"><figcaption><b>Шкаф с туалетным столиком</b> и подсветкой</figcaption></figure>
+      <figure class="wide" data-type="kitchen"><img src="img/k-grey.jpg" width="1200" height="802" alt="Серая кухня с каменным островом" loading="lazy"><figcaption><b>С островом</b>, керамика, 4,8 м</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section paper" id="kak">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Как работаем</h2>
+      <p>Цена фиксируется в договоре после 3D-проекта и больше не меняется.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Замер</h3><span class="when">в удобный день, бесплатно</span><p>Замерщик приезжает с образцами фасадов и столешниц, всё можно потрогать дома.</p></li>
+      <li><h3>3D-проект</h3><span class="when">через 2 дня</span><p>Показываем кухню в вашей квартире, меняем, пока не понравится. Проект бесплатный, даже если не закажете.</p></li>
+      <li><h3>Производство</h3><span class="when">21 день</span><p>Пилим и собираем корпуса в Мытищах. Присылаем фото, как идёт работа.</p></li>
+      <li><h3>Сборка</h3><span class="when">1–2 дня</span><p>Собираем, подключаем мойку и технику, вывозим мусор.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap materials">
+    <div>
+      <div class="section-head" style="margin-bottom:0">
+        <h2>Своё производство</h2>
+        <p>Поэтому не зависим от чужих сроков и можем сделать модуль любого размера, хоть 37 сантиметров.</p>
+      </div>
+      <div class="swatches" aria-label="Примеры фасадов">
+        <div class="swatch"><i style="background:#c49a6c"></i>Дуб натуральный<span>шпон</span></div>
+        <div class="swatch"><i style="background:#3b4a45"></i>Графитовый зелёный<span>МДФ эмаль</span></div>
+        <div class="swatch"><i style="background:#e7e2d8"></i>Тёплый белый<span>МДФ эмаль</span></div>
+        <div class="swatch"><i style="background:#8b8f92"></i>Бетон<span>ЛДСП</span></div>
+        <div class="swatch"><i style="background:#1f2328"></i>Чёрный матовый<span>МДФ эмаль</span></div>
+        <div class="swatch"><i style="background:#a7b39c"></i>Шалфей<span>МДФ эмаль</span></div>
+      </div>
+    </div>
+    <img src="img/shop-pencil.jpg" width="1200" height="800" alt="Мастер размечает карандашом деревянную заготовку" loading="lazy">
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head"><h2>Отзывы</h2></div>
+    <div class="reviews">
+      <figure class="review"><blockquote>Кухню собрали за полтора дня, как и обещали. Цена в итоге совпала с договором до рубля.</blockquote><figcaption>Елена, угловая кухня, Москва</figcaption></figure>
+      <figure class="review"><blockquote>Ниша под гардеробную была кривая, сделали модули под каждый угол. Ни одного зазора.</blockquote><figcaption>Павел, гардеробная, Королёв</figcaption></figure>
+      <figure class="review"><blockquote>Понравилось, что в 3D-проекте можно было поменять всё три раза бесплатно.</blockquote><figcaption>Наталья, кухня с островом, Химки</figcaption></figure>
+    </div>
+    <p class="demo-note">В демо-версии сайта показаны примеры отзывов.</p>
+  </div>
+</section>
+
+<section class="section" id="shourum">
+  <div class="wrap visit">
+    <div class="visit-info">
+      <h2>Шоурум</h2>
+      <dl>
+        <div><dt>Адрес</dt><dd>Москва, ул. Рабочая, 5, второй этаж</dd></div>
+        <div><dt>Часы работы</dt><dd>Каждый день с 10:00 до 20:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+74950000000">+7 (495) 000-00-00</a></dd></div>
+        <div><dt>Где работаем</dt><dd>Москва и область до 50 км от МКАД</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-ink" href="#" data-book="кухня">Вызвать замерщика</a>
+        <a class="btn btn-line" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B0%D1%8F%2C%205" target="_blank" rel="noopener">Открыть на карте</a>
+      </div>
+    </div>
+    <img src="img/shop-tools.jpg" width="1200" height="800" alt="Инструменты мастерской на стене" loading="lazy">
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Мебельная мастерская «Ладно», ООО «Ладно», ИНН 0000000000</span>
+    <span>Демонстрационный сайт для портфолио: мастерская, цены, адрес, телефон и отзывы вымышлены.</span>
+  </div>
+</footer>
+
+<dialog class="booking" id="booking" aria-labelledby="booking-title">
+  <form method="dialog">
+    <div class="top">
+      <h2 id="booking-title">Бесплатный замер</h2>
+      <button class="close" type="button" aria-label="Закрыть">×</button>
+    </div>
+    <label for="z-what">Что делаем
+      <select id="z-what" name="what">
+        <option value="кухня">Кухня</option>
+        <option value="шкаф">Шкаф</option>
+        <option value="гардеробная">Гардеробная</option>
+        <option value="кухня и шкаф">Кухня и шкаф</option>
+      </select>
+    </label>
+    <label for="z-place">Город или район
+      <input id="z-place" name="place" type="text" placeholder="Москва, Сокол">
+    </label>
+    <label for="z-when">Когда удобно
+      <select id="z-when" name="when">
+        <option>на этой неделе</option>
+        <option>в выходные</option>
+        <option>на следующей неделе</option>
+      </select>
+    </label>
+    <label for="z-name">Как к вам обращаться
+      <input id="z-name" name="name" type="text" autocomplete="given-name" placeholder="Имя">
+    </label>
+    <button class="btn btn-ink" type="submit">Отправить в WhatsApp</button>
+    <p class="fine">Откроется WhatsApp с готовым сообщением. Если вы считали кухню на сайте, расчёт добавится в сообщение. Сайт ничего не сохраняет.</p>
+  </form>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>

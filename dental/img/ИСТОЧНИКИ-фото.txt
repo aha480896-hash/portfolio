@@ -1,0 +1,14 @@
+Фото — Unsplash (unsplash.com/license): бесплатно, в том числе для коммерческого использования, без обязательного указания автора.
+hero 1777331903190-341a3dd0441b
+plan 1606811841689-23dfddce3e95
+smile 1677026010083-78ec7f1b84ed
+implant 1593022356769-11f762e25ed9
+hall 1762625570087-6d98fca29531
+aligners 1564420228450-d9a5bc8d6565
+tools 1771442873038-dda05b6ca447
+xray 1588776814546-1ffcf47267a5
+doc-chief 1729162128021-f37dca3ff30d
+doc-therapist 1662837775286-7e6258c7c595
+doc-ortho 1667133295308-9ef24f71952e
+doc-surgeon 1663185551550-f8f56529ac5e
+(адрес: https://unsplash.com/photos/<id> ищется по id картинки images.unsplash.com/photo-<id>)

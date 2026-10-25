@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>«Пипетка» — магазин корейской, японской и европейской косметики в Москве</title>
+<meta name="description" content="Каталог уходовой косметики восьми брендов из Кореи, Японии и Европы. Подбор по типу кожи, два магазина в Москве, самовывоз и доставка. Соберите список и отправьте в WhatsApp.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/rubik-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="«Пипетка», в начало"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4bff"/><rect x="13" y="4" width="6" height="8" rx="3" fill="#fff"/><rect x="14.5" y="11" width="3" height="11" fill="#fff"/><path d="M16 22c-2 3-3 4-3 5.5a3 3 0 0 0 6 0c0-1.5-1-2.5-3-5.5Z" fill="#fff"/></svg>пипетка</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#katalog">Каталог</a>
+      <a href="#brendy">Бренды</a>
+      <a href="#kak">Как купить</a>
+      <a href="#magaziny">Магазины</a>
+    </nav>
+    <button class="btn btn-cobalt btn-small list-btn" type="button" data-list><span class="label">Мой список</span><span class="count" data-count>0</span></button>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Уходовая косметика из Кореи, Японии и Европы</h1>
+      <p class="lead">Восемь брендов и всё в наличии в двух магазинах Москвы. Соберите список на сайте — отложим к вашему приходу или привезём завтра.</p>
+      <div class="skin-pick">
+        <span>Подобрать по типу кожи</span>
+        <div class="chips">
+          <button class="chip" type="button" data-key="skin" data-value="dry" aria-pressed="false">Сухая</button>
+          <button class="chip" type="button" data-key="skin" data-value="oily" aria-pressed="false">Жирная</button>
+          <button class="chip" type="button" data-key="skin" data-value="combo" aria-pressed="false">Комбинированная</button>
+          <button class="chip" type="button" data-key="skin" data-value="sensitive" aria-pressed="false">Чувствительная</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" width="1400" height="2100" alt="Круглая ниша с полками, на которых стоят баночки и флаконы">
+      <div class="badge"><b>Пробники</b>к каждому заказу от&nbsp;2&nbsp;000&nbsp;₽</div>
+    </div>
+  </div>
+</section>
+
+<section class="section gray" id="katalog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Каталог</h2>
+      <p>Нажмите на средство, чтобы прочитать, для какой кожи оно подходит и как им пользоваться.</p>
+    </div>
+    <div class="catalog">
+      <aside class="filters" aria-label="Фильтры">
+        <fieldset><legend>Что ищете</legend><div class="opts" id="f-cat"></div></fieldset>
+        <fieldset><legend>Тип кожи</legend><div class="opts" id="f-skin"></div></fieldset>
+        <fieldset><legend>Бренд</legend><div class="opts" id="f-brand"></div></fieldset>
+        <fieldset><legend>Цена</legend><div class="opts" id="f-price"></div></fieldset>
+        <button class="reset" type="button" data-reset>Сбросить фильтры</button>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <label class="search"><span class="skip">Поиск</span><input id="q" type="search" placeholder="Сыворотка, SPF, Hanbit…" autocomplete="off"></label>
+          <label><span class="skip">Сортировка</span><select id="sort"><option value="pop">Сначала популярные</option><option value="cheap">Сначала дешевле</option><option value="expensive">Сначала дороже</option></select></label>
+        </div>
+        <p class="found" id="found" aria-live="polite" style="color:var(--muted);margin-bottom:14px"></p>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brendy">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Бренды</h2>
+      <p>Возим напрямую от дистрибьюторов, у каждого средства есть документы и срок годности не меньше года.</p>
+    </div>
+    <div class="brands" id="brands"></div>
+  </div>
+</section>
+
+<section class="section gray" id="kak">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Как купить</h2>
+      <p>Оплата при получении, картой или наличными. Предоплата не нужна.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Соберите список</h3><p>Нажимайте «В список» у нужных средств. Список сохранится в этом браузере.</p></li>
+      <li><h3>Отправьте в WhatsApp</h3><p>Выберите магазин или доставку. Консультант проверит наличие и ответит за 15 минут.</p></li>
+      <li><h3>Заберите или получите</h3><p>Отложим на 3 дня. Доставка по Москве на следующий день.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="magaziny">
+  <div class="wrap">
+    <div class="section-head"><h2>Магазины</h2></div>
+    <div class="stores">
+      <article class="store">
+        <img src="img/shop-1.jpg" width="1200" height="1200" alt="Светлые полки магазина с флаконами" loading="lazy">
+        <h3 style="font-size:24px;font-weight:600">Тверская</h3>
+        <dl><dt>Адрес</dt><dd>Москва, ул. Тверская, 12, первый этаж</dd><dt>Метро</dt><dd>«Пушкинская», 3 минуты</dd><dt>Часы</dt><dd>каждый день 10:00–22:00</dd></dl>
+      </article>
+      <article class="store">
+        <img src="img/shop-2.jpg" width="1200" height="1446" alt="Полки с подсветкой и средствами по уходу" loading="lazy">
+        <h3 style="font-size:24px;font-weight:600">Сокол</h3>
+        <dl><dt>Адрес</dt><dd>Москва, Ленинградский проспект, 76</dd><dt>Метро</dt><dd>«Сокол», 5 минут</dd><dt>Часы</dt><dd>каждый день 10:00–21:00</dd></dl>
+      </article>
+    </div>
+    <div class="delivery">
+      <div><b>Самовывоз</b><span>бесплатно, отложим на 3 дня</span></div>
+      <div><b>300 ₽</b><span>доставка по Москве на следующий день</span></div>
+      <div><b>от 3 000 ₽</b><span>доставка бесплатно</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Магазин косметики «Пипетка», ИП Орлова Е. В., ИНН 000000000000. Телефон: +7 (495) 000-00-00</span>
+    <span>Демонстрационный сайт для портфолио: магазин, бренды, товары, цены и адреса вымышлены.</span>
+  </div>
+</footer>
+
+<dialog class="product" id="product" aria-labelledby="p-title">
+  <div class="inner">
+    <div class="pic"></div>
+    <div class="info">
+      <div class="top"><span class="brand"></span><button class="x" type="button" aria-label="Закрыть">×</button></div>
+      <h2 id="p-title"></h2>
+      <span class="price"></span>
+      <p data-about></p>
+      <dl><div><dt>Подходит</dt><dd data-skin></dd></div><div><dt>Как пользоваться</dt><dd data-how></dd></div></dl>
+      <button class="btn btn-cobalt" type="button" data-add="">Добавить в список</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="drawer" id="list" aria-labelledby="l-title">
+  <form>
+    <div class="head"><h2 id="l-title">Мой список</h2><button class="x" type="button" aria-label="Закрыть">×</button></div>
+    <div class="items"></div>
+    <div class="foot">
+      <div class="sumrow"><span>Средства</span><span data-sub>0 ₽</span></div>
+      <fieldset class="how">
+        <label><input type="radio" name="how" value="0" checked> Заберу на Тверской</label>
+        <label><input type="radio" name="how" value="1"> Заберу на Соколе</label>
+        <label><input type="radio" name="how" value="delivery"> Доставка по Москве</label>
+      </fieldset>
+      <div class="sumrow"><span>Доставка</span><span data-del>самовывоз</span></div>
+      <div class="sumrow total"><span>Итого</span><span data-total>0 ₽</span></div>
+      <label><span class="skip">Имя</span><input type="text" name="name" autocomplete="given-name" placeholder="Как к вам обращаться"></label>
+      <button class="btn btn-cobalt" type="submit" data-send>Отправить в WhatsApp</button>
+      <p class="fine">Откроется WhatsApp с вашим списком. Оплата при получении. Сайт хранит список только в этом браузере.</p>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/catalog.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
